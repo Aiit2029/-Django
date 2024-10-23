@@ -6,9 +6,24 @@
 </head>
 <body>
 <h4>
-    当前时间：{{ current_time }}
-    
+    当前时间：<span id="currentTimeDisplay">{{current_time}}</span>
 </h4>
-
+<span>点击收藏本页面</span>
+<a href="/index">点击进入时间页面</a>
+<a href="/login/">点击进入登陆页面</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+{#<script>#}
+{#    $(document).ready(function () {#}
+{#        function updateTime() {#}
+{#            $.ajax({#}
+{#                url: '{% url 'get_current_time' %}', // 这里假设服务器端有一个 getTime.php 文件来返回当前时间#}
+{#                success: function (data) {#}
+{#                    $('#currentTimeDisplay').html(data);#}
+{#                }#}
+{#            });#}
+{#        }#}
+{#        setInterval(updateTime, 1000); // 每秒更新一次时间#}
+{#    });#}
+{#</script>#}
 </body>
 </html>
