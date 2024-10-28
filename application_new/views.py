@@ -1,15 +1,24 @@
 import datetime
+
+from django.views import View
+
 from application_new import models
+
+from django.urls import reverse
 
 from django.http import JsonResponse, HttpResponse
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 
 # Create your views here.
 
+
+
+
 def index(request):
     # import datetime
+    print(reverse('application_new:index'))
 
     now = datetime.datetime.now()
     current_time = now.strftime("%Y-%m-%d %H:%M:%S")
@@ -22,7 +31,7 @@ def login(request):
 
     return render(request, 'login.html')
 
-def auth(request):
+def main(request):
     print(request.POST)
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -33,15 +42,16 @@ def auth(request):
         # else:
         #     HttpResponse('登陆失败')
         if username == 'root' and password == 'root':
-            return main(request)
+            return render(request, 'main.html')
         else:
             return HttpResponse('登陆失败')
     elif request.method == 'GET':
         return render(request, 'auth.html')
 
+class myView(View):
+    def get(self,request):
+        return render(request, 'login.html')
 
-def main(request):
-    return render(request, 'main.html')
 
 def books(request,year):
 

@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+{% url 'application_new:index' %}
 <h4>
     当前时间：<span id="currentTimeDisplay">{{current_time}}</span>
 </h4>
+
 <span>点击收藏本页面</span>
 <a href="/index">点击进入时间页面</a>
 <a href="/login/">点击进入登陆页面</a>

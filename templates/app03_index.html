@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% url 'app03:index' %}
+<h4>{{s}}</h4>
+<h4>列表:{{ l.0 }}</h4>
+<h4>列表:{{ l.2 }}</h4>
+<h4>字典:{{ dic.name }}</h4>
+<h4>日期:{{ date.year }}</h4>
+
+<!--取列表的第1个对象的name属性的值-->
+<h4>类对象列表:{{ person_list.0.name }}</h4>
+<!--取列表的第1个对象的dream方法的返回值，如果没有返回值，拿到的是none-->
+<h4>类对象列表:{{ person_list.0.dream }}</h4>
+注意：
+    调用对象里面的方法的时候，不需要写括号来执行，并且只能执行不需要传参数的方法，如果你的这个方法需要传参数，那么模板语言不支持，不能帮你渲染
+</body>
+</html>
