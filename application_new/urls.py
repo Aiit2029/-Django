@@ -30,6 +30,7 @@ urlpatterns = [
     # path('main/',views.main),
     re_path('books/([0-9]{4})/',views.books),
     path('login/',views.myView.as_view()),
+    path('filter/',views.filter),
 
 
     # path('index/',views.get_current_time,name='get_current_time'),

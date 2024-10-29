@@ -15,6 +15,9 @@ def index(request):
     dic = {"name": "yuan", "age": 18}  # 字典
     date = datetime.date(1993, 5, 2)  # 日期对象
 
+
+
+
     class Person(object):
         def __init__(self, name):
             self.name = name

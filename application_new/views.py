@@ -26,10 +26,12 @@ def index(request):
 
 def login(request):
     print(request.method)
-
-
-
     return render(request, 'login.html')
+
+def filter(request):
+    s1 = '张珊'
+    return render(request,'filter.html',{'s1':s1})
+
 
 def main(request):
     print(request.POST)
@@ -54,10 +56,6 @@ class myView(View):
 
 
 def books(request,year):
-
-
-
-
 
     return render(request,'books.html',{'year':year})
 
